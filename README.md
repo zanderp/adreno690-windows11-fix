@@ -1,6 +1,7 @@
 # GPU Fix for Adreno 690 unsuported display panel Windows 11 ARM
 
 This project aims to fix the freezes caused by replacing the LCD panel on various laptops that use the Adreno680/690 graphics board since the windows provided driver is not 100% compatible. ( EG.: Samsung Galaxy Book GO 5G)
+
 The application engages the GPU in the background by continuously running a minimal OpenGL task. It includes a system tray icon to indicate its status and allows you to exit the application from the tray menu.
 
 ## Features
