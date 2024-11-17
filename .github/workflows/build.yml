@@ -1,0 +1,37 @@
+name: Build Executable
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'  # Specify the Python version you're using
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pyinstaller pystray pillow
+
+      - name: Build executable with PyInstaller
+        run: |
+          pyinstaller --noconsole --onefile --hidden-import=pystray --hidden-import=PIL gpu_try.py
+
+      - name: Upload executable as artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: gpu_try_executable
+          path: dist/gpu_try.exe
