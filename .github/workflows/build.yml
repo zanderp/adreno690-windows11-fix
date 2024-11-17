@@ -14,12 +14,12 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.11'  # Specify the Python version you're using
+          python-version: '3.11'
 
       - name: Install dependencies
         run: |
@@ -31,7 +31,7 @@ jobs:
           pyinstaller --noconsole --onefile --hidden-import=pystray --hidden-import=PIL gpu_try.py
 
       - name: Upload executable as artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: gpu_try_executable
           path: dist/gpu_try.exe
