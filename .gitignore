@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# PyInstaller
+#  - Ignore the build and dist directories
+#  - Also ignore the generated spec file
+/build/*
+/dist/*
+*.spec
+
+# Virtual environments
+.venv/
+env/
+venv/
+ENV/
+
+# Distribution / packaging
+.Python
+*.egg-info/
+*.egg
+*.whl
+*.manifest
+*.spec
+
+# Installer logs and PyInstaller debug logs
+pip-log.txt
+pip-delete-this-directory.txt
+*.log
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+~$*
